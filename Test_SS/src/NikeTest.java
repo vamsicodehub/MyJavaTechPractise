@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class Test1 {
+public class NikeTest {
 
 	public static void main(String[] args) {
 		String input = "}}";
@@ -11,17 +11,18 @@ public class Test1 {
 		char[] chr = input.toCharArray();
 		Stack<String> inputStack = new Stack<>();
 		String popElement = "";
-		for(char c : chr) {
+		for (char c : chr) {
 			String inputStr = c + "";
-			if("(".equals(inputStr) || "{".equals(inputStr) || "[".equals(inputStr))
+			
+			if ("(".equals(inputStr) || "{".equals(inputStr) || "[".equals(inputStr))
 				inputStack.push(c + "");
-			else if(!inputStack.isEmpty())
+			else if (!inputStack.isEmpty())
 				popElement = inputStack.pop();
-			
-			if(")".equals(inputStr) && popElement.equals("(") || "]".equals(inputStr) && popElement.equals("[")
-					|| "}".equals(inputStr) && popElement.equals("{"))
+
+			if ((")".equals(inputStr) && "(".equals(popElement)) || ("]".equals(inputStr) && "[".equals(popElement))
+					|| ("}".equals(inputStr) && "{".equals(popElement)))
 				return true;
-			
+
 		}
 		return false;
 	}
