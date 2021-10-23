@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,7 +8,7 @@ public class WaySum {
 	public static void main(String[] args) {
 		System.out.println((char) 97);
 //		System.out.println(ways(5, 2));
-//		System.out.println(waysRecursion(5, 2));
+		System.out.println(waysRecursion(5, 3));
 //		System.out.println(playlist(Arrays.asList(5, 30, 20, 150, 100, 40)));
 		
 		List<List<Integer>> mainList = new ArrayList<>();
@@ -63,7 +62,6 @@ public class WaySum {
 	}
 
 	public static char slowestKey(List<List<Integer>> keyTimes) {
-		// Write your code here
 		int res = 0;
 		int it = 0;
 		

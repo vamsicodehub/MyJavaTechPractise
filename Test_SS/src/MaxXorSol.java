@@ -6,7 +6,7 @@ public class MaxXorSol {
 
 	public static void main(String[] args) {
 		System.out.println(maxSubarrayXOR(3, new int[] { 9,5,3 }));
-		System.out.println(maxSubarrayXOR2(3, new int[] { 9,5,3 }));
+//		System.out.println(maxSubarrayXOR2(3, new int[] { 9,5,3 }));
 	}
 
 	static int maxSubarrayXOR(int N, int arr[]) {

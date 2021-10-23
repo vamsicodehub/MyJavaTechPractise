@@ -1,3 +1,4 @@
+import java.util.StringJoiner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
@@ -22,8 +23,8 @@ public class BlockingQueueDemo {
 		System.out.println(priorityBQueue.size());
 		System.out.println(priorityBQueue);
 		
-		priorityBQueue1.add(new Employee("v", 0));
-		priorityBQueue1.add(new Employee("v", 0));
+		priorityBQueue1.add(new Employee("Vamsi", 3103));
+		priorityBQueue1.add(new Employee("Sachin", 10));
 		
 		System.out.println(priorityBQueue1.size());
 		System.out.println(priorityBQueue1);
@@ -31,7 +32,7 @@ public class BlockingQueueDemo {
 
 }
 
-class Employee {
+class Employee implements Comparable<Employee>{
 	private String name;
 	private int id;
 
@@ -39,4 +40,16 @@ class Employee {
 		this.name = name;
 		this.id = id;
 	}
+
+	@Override
+	public int compareTo(Employee o) {
+		return this.name.compareTo(o.name);
+	}
+	
+	@Override
+	public String toString() {
+		StringJoiner joiner = new StringJoiner("[,]","Id="+id, " Name="+name);
+		return joiner.toString();
+	}
+
 }

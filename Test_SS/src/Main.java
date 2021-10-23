@@ -1,4 +1,3 @@
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -6,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 	static Map<Integer, Integer> resultValidatorMap = new LinkedHashMap<>();
@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		List<Integer> a = Arrays.asList(5, 6, 7);
-		List<Integer> b = Arrays.asList(5, 6, 7);
+		List<Integer> b = Arrays.asList(5, 9, 8);
 		List<Integer> result = compareTriplets(a, b);
 		System.out.println(result.stream().reduce(0, Integer::sum));
 		System.out.println(result.stream().map(Object::toString).collect(Collectors.joining(" ")) + "\n");
@@ -51,7 +51,6 @@ public class Main {
 		int aSize = a.size();
 		int bSize = b.size();
 		Integer[] resultList = new Integer[2];
-		List<Integer> result = new ArrayList<>();
 
 		if (aSize != bSize)
 			return new ArrayList<>();
@@ -64,13 +63,8 @@ public class Main {
 
 		}
 		
-		for(int i = 0 ; i < resultList.length; i++) {
-			if(resultList[i] != null)
-				result.add(resultList[i]);
-		}
-
-		return result;
-
+		return Stream.of(resultList).filter(i -> i!= null).collect(Collectors.toList());
+		
 	}
 
 	private static String validatePSEL(String string) {
@@ -81,10 +75,8 @@ public class Main {
 		}
 
 		if (value % 10 == 0) {
-			// System.out.println("Y");
 			return "Y";
 		} else {
-			// System.out.println("N");
 			return "N";
 		}
 	}

@@ -21,7 +21,7 @@ public class Test_SS_1 {
 		test2();
 		test("barfoothefoobarman" + "", Arrays.asList("foo", "bar"));
 		System.out.println(NthTerm(6));
-		System.out.println(majorityElement(new int[] { 1, 2, 4 }, 1));
+		System.out.println(majorityElement(new int[] { 4, 2, 2, 4, 4 }, 2));
 
 	}
 
@@ -60,7 +60,7 @@ public class Test_SS_1 {
 			else
 				map.put(a[i], 1);
 		}
-
+ 
 		for (Map.Entry<Integer, Integer> entryMap : map.entrySet()) {
 			if (entryMap.getValue() > size / 2)
 				return entryMap.getKey();
