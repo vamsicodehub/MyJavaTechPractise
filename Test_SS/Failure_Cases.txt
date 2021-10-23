@@ -1,0 +1,58 @@
+//TODO :: Have to dig deep in many areas.
+
+FileUpload api?
+Difference between queryparam, requestparam, pathvariable ? 
+--> QueryParam/RequestParam is a query string in the url after "?" and in rest api we can make it optional, Where as PathVariable is a part of uri, which we cant make it optional.
+create custom errorcodes in spring rest api --> As of now do with @ControllerAdvice,@ExceptionHandler,RepsonseEntity, errorcodes returning by maintaining a key value in the properties file
+concurrenthashmap internal datastructure.
+concurrency level in concurrenthashmap
+stream api :
+intermediary operation --> STreams to streams (map,flatMap,count....) and terminal operation --> STreams to some other or it is end operation (forEach)
+map and flatmap difference --> map --> performing an operation on a single element, whereas flatmap performs on mutliple(collection) of elements
+Method references in java 8 --> Simplified veriosn of lambda
+Spring Boot profiles --> spring.profiles.active=prod.. 
+Handling beans based on profiles --> @Profile("prod") on top of @Bean
+lookup concept in spring boot for scopes working as per the class strategy --> @Lookup over methods
+n+1 problem and its solution in Hibernate --> by using fetchstrategy type = join and lazy = true
+Microservices strategy -- Strangler
+Hibernate Caching levels. first level session managed, second level or the external cache implementation (cross check)
+Session Creation.
+Tool to Push DockerImages? --Jenkins Master/Slave concept
+
+Open Clarifications Required ::
+---------------------------------
+Use of Optional interface ?
+What is the unicode in Java?
+Validators implementation in SpringRest
+TransactionManagement in SpringBoot/Microservices
+Implementing custom starter in spring boot --> 
+SpringBoot issues while serializing parent child objects, stack overflow
+Map Collection in Hibernate
+Custom Logging Implementations
+About Hibernate Tuning?
+@Transactional and Propagation types?
+@Embeddable in Hibernate
+DIfference between Get,Post,Put,Delete
+
+MicroServices & SpringBoot clarifications required ::
+--------------------------------------------------
+Steps to take care of migrating old App to Microservices App
+Steps to implement security in spring cloud gateway for all the microservices.
+Implementing caches with SpringBoot for microservices
+Injecting external caches like redis to the app.
+How to write unit cases for the web app? --@WebMvcTest, @AutoConfigureMockMvc, @AutowiredMockMVC, @MockBean
+How to do the code quality checks?
+How to implement CI/CD for the microservice app
+Knowledge on Kafka, how and where we can use it?
+
+DevOps ::
+Difference between EC2 and Elastic Bean Stalk?
+DockerFile complete explanation.
+
+Kubernetes :: Helmchart
+DataConfigMap
+Ingress....
+LoadBalancing
+ServiceDiscovery
+Difference between Services and Deployments
+
