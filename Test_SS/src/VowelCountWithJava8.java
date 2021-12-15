@@ -16,7 +16,7 @@ public class VowelCountWithJava8 {
 		for (int i = 0; i < s.toCharArray().length; i++) {
 			charList.add(s.charAt(i));
 		}
-<<<<<<< HEAD
+
 		List<Integer> inputList = Arrays.asList(10, 20, 23, 45, 55, 65, 70, 80, 90, 40, 30);
 		System.out.println("Sequential:"
 				+ inputList.stream().filter(l -> (l % 10 == 0)).collect(Collectors.toCollection(ArrayList::new)));
@@ -40,7 +40,7 @@ public class VowelCountWithJava8 {
 
 		System.out.println(vowelCountMap);
 
-=======
+
 		Stream.of(s.toCharArray());
 		List<Character> vowelChars = Arrays.asList('a','e','i','o','u');
 		Map<Object, Integer> vowelCountMap = charList.parallelStream().filter(e -> vowelChars.contains(e)).
@@ -68,8 +68,7 @@ public class VowelCountWithJava8 {
 		
 		charList.parallelStream().filter(e -> vowelChars.contains(e)).
         collect(Collectors.minBy(Comparator.comparing(e -> e))).stream().forEach(System.out::print);
-		
->>>>>>> 395f683 (commiting the incremental changes)
+	
 	}
 	
 }
