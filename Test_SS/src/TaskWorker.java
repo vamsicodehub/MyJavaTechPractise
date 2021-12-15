@@ -1,10 +1,11 @@
+import java.util.concurrent.Callable;
 
-public class TaskWorker implements Runnable {
+public class TaskWorker implements Callable<Integer> {
 	
 	DataTransferUtil dataTransferUtil = new DataTransferUtil("");
 
 	@Override
-	public void run() {
+	public Integer call() {
 		while(true) {
 			String data = TaskExecutor.takeData();
 			if(data != null) {

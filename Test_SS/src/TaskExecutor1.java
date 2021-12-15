@@ -3,17 +3,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
-
 public class TaskExecutor1 {
 	
 	private static BlockingQueue<String> dataQueue = new LinkedBlockingQueue<>();
 	private static ExecutorService executorService ;
 	
 	static {
-		BasicThreadFactory factory = new BasicThreadFactory.Builder().namingPattern("TransferThread1-%d")
-				.priority(Thread.MAX_PRIORITY).build();
-		executorService = Executors.newFixedThreadPool(Integer.valueOf(5), factory);
+//		BasicThreadFactory factory = new BasicThreadFactory.Builder().namingPattern("TransferThread1-%d")
+//				.priority(Thread.MAX_PRIORITY).build();
+		executorService = Executors.newFixedThreadPool(Integer.valueOf(5), null);
 		
 		TaskWorker1 accountPostingWorker = new TaskWorker1();
 		for (int i = 0; i < 5; i++)

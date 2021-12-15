@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -29,6 +28,7 @@ public class CommonMinElementinArray {
 
 		return result.get(0);
 	}
+	
 
 	static int commonMinElement2(int[] a, int[] b) {
 		Arrays.sort(a);
